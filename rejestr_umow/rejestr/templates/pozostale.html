@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Lista umów, które zbliżaja się do zakończenia w rejestrze "POZOSTAŁE"</h1>
+<p>Dane</p>
+<table>
+                    <tr>
+                        <th>ID</th>
+                        <th>REJESTR</th>
+                        <th>NR_UMOWY</th>
+                        <th>KONTRAHENT</th>
+                        <th>DATA KOŃCA</th>
+                    </tr>
+                        {% for row0 in dane %}
+                    <tr>
+                        <td>{{ row0.0 }}</td>
+                        <td>{{ row0.1 }}</td>
+                        <td>{{ row0.2 }}</td>
+                        <td>{{ row0.3 }}</td>
+                        <td>{{ row0.4 }}</td>
+                            {% endfor %}
+                    </tr>
+        </table>
+</body>
+</html>

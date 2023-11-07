@@ -21,7 +21,10 @@ TYP_U = (
     ('K', 'KONTRAKT'),
     ('Z', 'ZLECENIE')
 )
-
+TYP_ART = (
+    ('1', 'ART. 275 pkt. 1'),
+    ('2', 'ART. 132')
+)
 
 class Kadry_k(models.Model):
     nr_umowy = models.CharField(max_length=30)
@@ -68,7 +71,6 @@ class Sprzedaz(models.Model):
     od = models.DateField()
     do = models.DateField()
     załącznik = models.FileField(null=True,blank=True)
-    color = models.CharField(max_length=7,null=True)
     class Meta:
         verbose_name_plural = 'Sprzedaż'
     def __str__(self):
@@ -96,6 +98,7 @@ class Zamowienia(models.Model):
     od = models.DateField()
     do = models.DateField()
     załącznik = models.FileField(null=True, blank=True)
+    na_podstawie_art_pzp = models.CharField(choices=TYP_ART, max_length=1,null=True, blank=True)
     class Meta:
         verbose_name_plural = 'Zamówienia Publiczne'
 

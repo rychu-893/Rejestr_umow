@@ -44,7 +44,7 @@ class SprzedazAdmin(ImportExportModelAdmin,admin.ModelAdmin):
             }),
         )
     search_fields = ['nr_umowy', 'kontrahent']
-    list_display = ['id', 'nr_umowy', 'kontrahent','data_podpisania', 'od', 'do', 'załącznik','color']
+    list_display = ['id', 'nr_umowy', 'kontrahent','data_podpisania', 'od', 'do', 'załącznik']
     inlines = [
         Sprzedaz_aInline
     ]
@@ -56,7 +56,7 @@ class Sprzedaz_aAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 @admin.register(Zamowienia)
 class ZamowieniaAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     search_fields = ['nr_umowy', 'kontrahent', 'przedmiot']
-    list_display = ['id', 'nr_umowy','data_podpisania', 'nr_postepowania', 'kontrahent','przedmiot', 'od', 'do', 'załącznik']
+    list_display = ['id', 'nr_umowy','data_podpisania', 'nr_postepowania', 'kontrahent','przedmiot', 'od', 'do', 'załącznik','na_podstawie_art_pzp']
     inlines = [
         Zamowienia_aInline
     ]
